@@ -52,3 +52,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     showSlide(currentIndex);
 });
+
+// Card Yapısı
+
+document.addEventListener('DOMContentLoaded', () => {
+    const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const buttonRect = button.getBoundingClientRect();
+            const numSparks = 10;
+
+            for (let i = 0; i < numSparks; i++) {
+                const spark = document.createElement('div');
+                spark.classList.add('sparks');
+                document.body.appendChild(spark);
+
+                const angle = Math.random() * 2 * Math.PI;
+                const radius = Math.random() * 30 + 10;
+
+                const x = buttonRect.left + buttonRect.width / 2 + Math.cos(angle) * radius;
+                const y = buttonRect.top + buttonRect.height / 2 + Math.sin(angle) * radius;
+
+                spark.style.left = `${x}px`;
+                spark.style.top = `${y}px`;
+
+                spark.addEventListener('animationend', () => {
+                    spark.remove();
+                });
+            }
+        });
+    });
+});
