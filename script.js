@@ -109,3 +109,15 @@ document.querySelector('form').addEventListener('submit', function (event) {
     event.preventDefault();
     alert('Thank you for subscribing to our newsletter!');
 });
+
+// yukarı ok
+function scrollToChat() {
+    var chatBox = document.querySelector('.live-chat');
+    chatBox.style.display = 'block';
+    chatBox.scrollIntoView({ behavior: 'smooth', block: 'end' });
+}
+
+function closeChat() {
+    var chatBox = document.querySelector('.live-chat');
+    chatBox.style.display = 'none';
+}
