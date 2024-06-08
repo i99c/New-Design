@@ -56,6 +56,23 @@ document.addEventListener('DOMContentLoaded', () => {
 // Card Yapısı
 
 document.addEventListener('DOMContentLoaded', () => {
+    const favoriteButtons = document.querySelectorAll('.add-to-favorite');
+
+    favoriteButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const heartIcon = button.querySelector('i');
+            if (heartIcon.classList.contains('fa-regular')) {
+                heartIcon.classList.remove('fa-regular');
+                heartIcon.classList.add('fa-solid', 'fa-heart');
+                button.innerHTML = '<i class="fas fa-heart"></i> Favorilere Eklendi';
+            } else {
+                heartIcon.classList.remove('fa-solid', 'fa-heart');
+                heartIcon.classList.add('fa-regular', 'fa-heart');
+                button.innerHTML = '<i class="far fa-heart"></i> Favorilere Ekle';
+            }
+        });
+    });
+
     const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
 
     addToCartButtons.forEach(button => {

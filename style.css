@@ -269,4 +269,66 @@ body.dark-mode #dark-mode-toggle {
     }
 }
 
+.add-to-favorite {
+    background-color: transparent;
+    border: none;
+    color: #777;
+    cursor: pointer;
+    transition: color 0.3s;
+    margin-right: 10px;
+    /* Favori buton ile fiyat arasına boşluk ekledik */
+}
+
+.add-to-favorite:hover {
+    color: #e91e63;
+}
+
+.add-to-favorite .far.fa-heart {
+    font-size: 1.5rem;
+    /* Favori simgesinin boyutunu artırdık */
+}
+
+.add-to-favorite .fas.fa-heart {
+    font-size: 1.5rem;
+    /* Favori simgesinin boyutunu artırdık */
+    color: #e91e63;
+}
+
+.add-to-cart-button {
+    background-color: #e91e63;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.add-to-cart-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: width 0.3s ease, height 0.3s ease;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.add-to-cart-button:hover::before {
+    width: 0;
+    height: 0;
+}
+
+.add-to-cart-button:hover {
+    background-color: #d81b60;
+    transform: scale(1.05);
+}
+
 /* Card Yapısı */
